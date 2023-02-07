@@ -98,6 +98,8 @@ defmodule TriviaGameWeb do
       import TriviaGameWeb.ErrorHelpers
       import TriviaGameWeb.Gettext
       alias TriviaGameWeb.Router.Helpers, as: Routes
+
+      import TriviaGameWeb.Components.{NavBarComponent}
     end
   end
 
