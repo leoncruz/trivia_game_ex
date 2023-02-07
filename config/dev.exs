@@ -26,7 +26,8 @@ config :trivia_game, TriviaGameWeb.Endpoint,
   secret_key_base: "ZsWQDVr6pZujw7E+EHjBwve/0Er1UNmlV1QoVtdFht4Psp7fzQCZeGuf8G0WFGqh",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
