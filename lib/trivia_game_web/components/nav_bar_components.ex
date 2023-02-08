@@ -24,7 +24,7 @@ defmodule TriviaGameWeb.Components.NavBarComponent do
         <h1 class="text-3xl">Trivia Game</h1>
       </div>
 
-      <div id="mobile-menu-list" class="mt-4 shadow-lg">
+      <div id="mobile-menu-list" class="invisible mt-4 shadow-lg">
         <ul class="flex flex-col space-y-8">
           <li class="py-2 px-4"><%= link "Home", to: "#" %></li>
           <li class="py-2 px-4"><%= link "Sign In", to: "#" %></li>
