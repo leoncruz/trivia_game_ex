@@ -9,3 +9,12 @@ document.querySelector('#mobile-menu').addEventListener('click',  () => {
     menu.classList.add('invisible');
   }
 });
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768) {
+    const menu = document.querySelector('#mobile-menu-list');
+
+    menu.classList.remove('visible');
+    menu.classList.add('invisible');
+  } 
+});
