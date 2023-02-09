@@ -7,6 +7,8 @@
       </div>
     <% end %>
 
+    <h1 class="text-2xl">Sign In</h1>
+
     <div class="flex flex-col w-80">
       <%= label f, :email %>
       <%= email_input f, :email, required: true, placeholder: "user@email.com", class: "rounded focus:border-violet-400" %>
@@ -22,7 +24,7 @@
       <%= checkbox f, :remember_me, class: "rounded checked:bg-violet-400 active:bg-violet-400 active:ring-violet-400" %>
     </div>
 
-    <%= submit "Log in", class: "py-2 px-4 rounded shadow bg-violet-500 text-white active:bg-violet-400 hover:bg-violet-400" %>
+    <%= submit "Sign In", class: "py-2 px-4 rounded shadow bg-violet-500 text-white active:bg-violet-400 hover:bg-violet-400" %>
   </div>
   </.form>
 
