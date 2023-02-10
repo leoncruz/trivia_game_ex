@@ -7,7 +7,7 @@ defmodule TriviaGameWeb.Components.NavBarComponent do
     ~H"""
     <nav class="h-2 w-screen md:h-16 shadow-lg">
       <div class="h-full invisible md:visible flex items-center justify-between mx-16">
-        <%= link "Home", to: Routes.page_path(@conn, :index) %>
+        <%= link "Home", to: Routes.home_path(@conn, :index) %>
 
         <h1 class="text-4xl">Trivia Game</h1>
 
@@ -36,7 +36,7 @@ defmodule TriviaGameWeb.Components.NavBarComponent do
 
       <div id="mobile-menu-list" class="invisible mt-4 shadow-lg">
         <ul class="flex flex-col space-y-8">
-          <li class="py-2 px-4"><%= link "Home", to: Routes.page_path(@conn, :index) %></li>
+          <li class="py-2 px-4"><%= link "Home", to: Routes.home_path(@conn, :index) %></li>
           <%= if @current_user do %>
             <li class="py-2 px-4"><%= link "Settings", to: Routes.user_settings_path(@conn, :edit) %></li>
             <li class="py-2 px-4 text-white bg-violet-500 hover:bg-violet-400 active:bg-violet-400 ">

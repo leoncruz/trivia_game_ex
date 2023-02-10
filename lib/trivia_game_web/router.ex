@@ -20,7 +20,7 @@ defmodule TriviaGameWeb.Router do
   scope "/", TriviaGameWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", HomeLive, :index
   end
 
   # Other scopes may use custom stacks.
