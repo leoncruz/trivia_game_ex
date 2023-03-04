@@ -1,11 +1,9 @@
-defmodule TriviaGame.ApiClient.Response do
-  defstruct [:body, :status]
-end
-
 defmodule TriviaGame.ApiClient do
-  alias TriviaGame.ApiClient.Response
+  alias TriviaGame.ApiClientBehavior.Response
 
-  @spec get(String.t()) :: {:ok | :error, Response}
+  @behaviour TriviaGame.ApiClientBehavior
+
+  @impl true
   def get(url) do
     result = HTTPoison.get(url)
 
