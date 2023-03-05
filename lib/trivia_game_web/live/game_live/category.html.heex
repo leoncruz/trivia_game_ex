@@ -1,0 +1,10 @@
+<h2 class="text-2xl text-center">Select a category</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 m-8">
+  <%= for category <- @categories do %>
+    <%= live_redirect category.name,
+      to: Routes.game_index_path(@socket, :index, %{"category" => category.id}),
+      class: "shadow bg-violet-500 text-white text-center rounded p-8 cursor-pointer"
+    %>
+  <% end %>
+</div>

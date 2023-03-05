@@ -21,6 +21,8 @@ defmodule TriviaGameWeb.Router do
     pipe_through :browser
 
     live "/", HomeLive, :index
+
+    live "/game/select_category", GameLive.Category, :category
   end
 
   # Other scopes may use custom stacks.
