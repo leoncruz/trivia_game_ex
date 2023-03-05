@@ -1,0 +1,15 @@
+<div class="h-full w-full flex items-center justify-center">
+  <div class="flex items-center justify-center flex-col">
+    <div class="max-w-[80%]">
+      <h2 class="text-2xl md:text-3xl text-center"><%= raw @current_question.question %></h2>
+    </div>
+
+    <div class="mt-32 flex flex-col md:flex-row justify-center items-center">
+      <%= for answer <- @current_question.answers do %>
+        <p class="my-6 md:mx-4">
+          <%= link(answer, to: "#", class: "p-4 md:p-6 rounded bg-violet-500 text-white") %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

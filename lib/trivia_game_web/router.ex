@@ -22,6 +22,7 @@ defmodule TriviaGameWeb.Router do
 
     live "/", HomeLive, :index
 
+    live "/game", GameLive.Index, :index
     live "/game/select_category", GameLive.Category, :category
   end
 
