@@ -15,9 +15,10 @@ defmodule TriviaGame.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: TriviaGame.PubSub},
       # Start the Endpoint (http/https)
-      TriviaGameWeb.Endpoint
+      TriviaGameWeb.Endpoint,
       # Start a worker by calling: TriviaGame.Worker.start_link(arg)
       # {TriviaGame.Worker, arg}
+      TriviaGame.Game.State
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
