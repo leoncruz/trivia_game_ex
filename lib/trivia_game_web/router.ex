@@ -2,6 +2,8 @@ defmodule TriviaGameWeb.Router do
   use TriviaGameWeb, :router
 
   import TriviaGameWeb.UserAuth
+  alias TriviaGameWeb.UserAuthLive
+  alias TriviaGameWeb.LayoutView
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -21,9 +23,6 @@ defmodule TriviaGameWeb.Router do
     pipe_through :browser
 
     live "/", HomeLive, :index
-
-    live "/game", GameLive.Index, :index
-    live "/game/select_category", GameLive.Category, :category
   end
 
   # Other scopes may use custom stacks.
@@ -81,6 +80,11 @@ defmodule TriviaGameWeb.Router do
     get "/users/settings", UserSettingsController, :edit
     put "/users/settings", UserSettingsController, :update
     get "/users/settings/confirm_email/:token", UserSettingsController, :confirm_email
+
+    live_session :user, on_mount: {UserAuthLive, :user}, root_layout: {LayoutView, "root.html"} do
+      live "/game", GameLive.Index, :index
+      live "/game/select_category", GameLive.Category, :category
+    end
   end
 
   scope "/", TriviaGameWeb do
